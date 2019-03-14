@@ -14,7 +14,7 @@ set(miniz_SOURCE miniz.c miniz_zip.c miniz_tinfl.c miniz_tdef.c)
 
 add_library(miniz SHARED ${miniz_SOURCE})
 #comment this line to build x64 library
-set_target_properties(miniz PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
+#set_target_properties(miniz PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
 
 set(EXAMPLE1_SRC_LIST "${CMAKE_CURRENT_SOURCE_DIR}/examples/example1.c")
 set(EXAMPLE2_SRC_LIST "${CMAKE_CURRENT_SOURCE_DIR}/examples/example2.c")
