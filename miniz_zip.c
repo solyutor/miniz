@@ -425,7 +425,10 @@ static mz_bool mz_zip_set_file_times(const char *pFilename, MZ_TIME_T access_tim
 static MZ_FORCEINLINE mz_bool mz_zip_set_error(mz_zip_archive *pZip, mz_zip_error err_num)
 {
     if (pZip)
+    {
         pZip->m_last_error = err_num;
+        pZip->m_last_native_error = MZ_LAST_NATIVE_ERROR;
+    }
     return MZ_FALSE;
 }
 

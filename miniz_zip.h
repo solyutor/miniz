@@ -157,7 +157,7 @@ typedef struct
     mz_zip_mode m_zip_mode;
     mz_zip_type m_zip_type;
     mz_zip_error m_last_error;
-
+    int m_last_native_error;
     mz_uint64 m_file_offset_alignment;
 
     mz_alloc_func m_pAlloc;

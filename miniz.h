@@ -187,16 +187,21 @@
 
 #if defined(_MSC_VER)
     //  Microsoft 
+    #include <windows.h>
     #define EXPORT __declspec(dllexport)
     #define IMPORT __declspec(dllimport)
+    #define MZ_LAST_NATIVE_ERROR GetLastError()
 #elif defined(__GNUC__)
     //  GCC
+    #include <errno.h>
     #define EXPORT __attribute__((visibility("default")))
     #define IMPORT
+    #define MZ_LAST_NATIVE_ERROR errno
 #else
     //  do nothing and hope for the best?
     #define EXPORT
     #define IMPORT
+    #define MZ_LAST_NATIVE_ERROR 0
     #pragma warning Unknown dynamic link import/export semantics.
 #endif
 
